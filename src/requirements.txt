@@ -67,7 +67,7 @@ pytz==2020.1
 pyzmq==19.0.1
 qtconsole==4.7.4
 requests==2.23.0
-scikit-learn==0.23.1
+scikit-learn==1.2.0
 scipy==1.4.1
 seaborn==0.10.1
 selectors==0.0.14
