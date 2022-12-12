@@ -1,0 +1,44 @@
+* Shapley Flow
+
+  This repository contains implementation for the AISTATS 2021 paper 
+  "[[https://arxiv.org/pdf/2010.14592.pdf][Shapley Flow: A Graph-based Approach to Interpreting Model Predictions]]".
+  
+  The directory is organized as the following. 
+
+  ~notebooks/~ contains case studies and experiments for the paper 
+  
+  - Tutorial for Shapley Flow: [[./notebooks/tutorial.pdf][pdf version]], [[./notebooks/tutorial.ipynb][ipynb version]]
+  - [[./notebooks/synthetic_sanity_checks.ipynb][Sanity check examples for Section 4.3]]
+  - [[./notebooks/linear_nutrition.ipynb][Experiments with the nutrition dataset for sanity check with linear model in Section 4.3]]
+  - [[./notebooks/linear_income.ipynb][Experiments with the adult censor income dataset for sanity check with linear model]]
+  - [[./notebooks/nutrition.ipynb][Case study of the nutrition dataset in Section 4.4]]
+  - [[./notebooks/income.ipynb][Case study of the adult censor income dataset]]
+  - [[notebooks/nutrition_CI.ipynb][Case study of the nutrition dataset with multiple baseline and 95% confidence interval]]
+
+  ~archive/~ include note and experiments for previous iterations of the project.
+
+  Files in the current directory include implementations of the algorithm and baselines.
+
+  - [[./flow.py][Implementation of the Shapley Flow algorithm]]
+  - [[./on_manifold.py][Implementation of the on-manifold SHAP baseline]]
+  - [[./linear_evaluation.py][Evaluation code for paper Section 4.3]]
+
+** Installation
+
+   Install dependencies using pipenv
+   
+   #+BEGIN_SRC bash
+   pip install pipenv
+   pipenv shell # create a shell that can later deactivate by Ctrl-d
+   pipenv install # install all packages in Pipfile
+   #+END_SRC
+   
+   We rely on pygraphviz for visualization. Installing pygraphviz requires to
+   install graphviz first, see this [[https://stackoverflow.com/questions/40266604/pip-install-pygraphviz-fails-failed-building-wheel-for-pygraphviz][post]] if pygraphviz fails to
+   install.
+
+   One can check that the installation works:
+   #+BEGIN_SRC bash
+   python flow.py # should output a print out of flow credit for a sample graph
+   #+END_SRC
+   
